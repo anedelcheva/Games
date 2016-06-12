@@ -22,7 +22,7 @@ namespace DefineClass
 
             set
             {
-                if (size < 22.62)
+                if (value < 22.62)
                 {
                     throw new ArgumentException("Size of display cannot be less than 22.62");
                 }
@@ -40,7 +40,7 @@ namespace DefineClass
 
             set
             {
-                if (num_colors < 2)
+                if (value < 2)
                 {
                     throw new ArgumentException("Number of colors cannot be less than two");
                 }

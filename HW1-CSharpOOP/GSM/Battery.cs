@@ -39,7 +39,7 @@ namespace DefineClass
 
             set
             {
-                if (hours_idle <= 0)
+                if (value <= 0)
                     throw new ArgumentException("Hours idle cannot be less than or equal to zero");
                 hours_idle = value;
             }
@@ -54,7 +54,7 @@ namespace DefineClass
 
             set
             {
-                if (hours_talk <= 0)
+                if (value <= 0)
                     throw new ArgumentException("Hours talk cannot be less than or equal to zero");
                 hours_talk = value;
             }

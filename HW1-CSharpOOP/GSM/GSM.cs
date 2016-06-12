@@ -7,7 +7,7 @@ namespace DefineClass
     {
         private string model;
         private string manufacturer;
-        private double price;
+        private double? price;
         private string owner;
         private Battery battery;
         private Display display;
@@ -22,7 +22,7 @@ namespace DefineClass
 
         private List<Call> call_history = new List<Call>();
 
-        public GSM(string model, string manufacturer, double price, string owner, Battery battery, Display display)
+        public GSM(string model, string manufacturer, double? price, string owner, Battery battery, Display display)
         {
             this.model = model;
             this.manufacturer = manufacturer;
@@ -38,19 +38,19 @@ namespace DefineClass
 
         }
 
-        public GSM(string model, string manufacturer, double price)
+        public GSM(string model, string manufacturer, double? price)
             : this(model, manufacturer, price, null, null, null)
         {
 
         }
 
-        public GSM(string model, string manufacturer, double price, string owner)
+        public GSM(string model, string manufacturer, double? price, string owner)
             : this(model, manufacturer, price, owner, null, null)
         {
 
         }
 
-        public GSM(string model, string manufacturer, double price, string owner, Battery battery)
+        public GSM(string model, string manufacturer, double? price, string owner, Battery battery)
             : this(model, manufacturer, price, owner, battery, null)
         {
 
@@ -65,7 +65,7 @@ namespace DefineClass
 
             set
             {
-                if (model == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Model cannot be null");
                 }
@@ -82,7 +82,7 @@ namespace DefineClass
 
             set
             {
-                if (manufacturer == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Manufacturer cannot be null");
                 }
@@ -90,7 +90,7 @@ namespace DefineClass
             }
         }
 
-        public double Price
+        public double? Price
         {
             get
             {
@@ -98,7 +98,7 @@ namespace DefineClass
             }
             set
             {
-                if (price < 0)
+                if (value < 0)
                 {
                     throw new ArgumentException("Price cannot be less than 0");
                 }
@@ -115,7 +115,7 @@ namespace DefineClass
 
             set
             {
-                if (owner == null)
+                if (value == null)
                 {
                     throw new ArgumentNullException("Owner cannot be null");
                 }
@@ -205,7 +205,5 @@ namespace DefineClass
             }
             return total;
         }
-
-
     }
 }

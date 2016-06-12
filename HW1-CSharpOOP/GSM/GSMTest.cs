@@ -18,6 +18,5 @@ namespace DefineClass
         {
             GSM.displayIphone4S();
         }
-
     }
 }
